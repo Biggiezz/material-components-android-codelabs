@@ -9,6 +9,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
+import com.google.codelabs.mdc.java.shrine.R;
 import com.google.codelabs.mdc.java.shrine.application.ShrineApplication;
 
 /**
@@ -67,6 +68,8 @@ public class ImageRequester {
      * @param url              URL of the image
      */
     public void setImageFromUrl(NetworkImageView networkImageView, String url) {
+        networkImageView.setDefaultImageResId(R.drawable.shr_product_image_placeholder);
+        networkImageView.setErrorImageResId(R.drawable.shr_product_image_placeholder);
         networkImageView.setImageUrl(url, imageLoader);
     }
 
